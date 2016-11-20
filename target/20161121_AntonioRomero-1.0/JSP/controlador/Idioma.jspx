@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : Idioma
+    Created on : 20-nov-2016, 17:37:56
+    Author     : Antonio
+-->
+<jsp:root   xmlns:jsp="http://java.sun.com/JSP/Page"
+            xmlns:c="http://java.sun.com/jsp/jstl/core"
+            version="2.1">
+    <jsp:directive.page contentType="text/html; charset=UTF-8" />
+    <jsp:directive.page isELIgnored="false" />
+    <jsp:output omit-xml-declaration="false"
+                doctype-root-element="html"
+                doctype-public="-//W3C//DTD XHTML 1.1//EN"
+                doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd" />
+    
+    <jsp:useBean id="eleccion" scope="session" class="es.albarregas.beans.EleccionBean"/>
+    <jsp:setProperty name="eleccion" property="*" />
+    <c:redirect url="../vista/eleccion.jspx"/>
+    
+</jsp:root>

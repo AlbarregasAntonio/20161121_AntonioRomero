@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : verCuota
+    Created on : 18-nov-2016, 12:48:29
+    Author     : Antonio
+-->
+<jsp:root   xmlns:jsp="http://java.sun.com/JSP/Page"
+            xmlns:c="http://java.sun.com/jsp/jstl/core"
+            xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+            version="2.1">
+    <jsp:directive.page contentType="text/html; charset=UTF-8" />
+    <jsp:directive.page isELIgnored="false" />
+    <jsp:output omit-xml-declaration="false"
+                doctype-root-element="html"
+                doctype-public="-//W3C//DTD XHTML 1.1//EN"
+                doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd" />
+    
+    <html>
+        <head>
+            <title>Inicio</title>
+            <Link rel="stylesheet" href="../../CSS/estiloIndex.css"/>
+        </head>
+        <body>
+            <fmt:setLocale value="${eleccion.idioma}"/>
+            <fmt:setBundle basename="${eleccion.idioma}" var="lang"/>
+            <div id="principal">
+                <jsp:include page="../../INC/cabecera.jspx"/>
+                <div id="cuerpo">
+                    <br/><br/>
+                    <h1><fmt:message key="gracias" bundle="${lang}"/></h1>
+                    <h3><fmt:message key="h3cuotas" bundle="${lang}"/></h3>
+                    <c:if test="${eleccion.edificio}">
+                        <p><fmt:message key="cuotaedificio" bundle="${lang}"/>&amp;nbsp<fmt:formatNumber value="${edificio.prima}" type="currency"/></p>
+                    </c:if>
+                    <c:if test="${eleccion.contenido}">
+                        <p><fmt:message key="cuotacontenido" bundle="${lang}"/>&amp;nbsp<fmt:formatNumber value="${contenido.prima}" type="currency"/></p>
+                    </c:if>
+                    <br/>
+                    <a href="../../index.jsp"><fmt:message key="volver" bundle="${lang}"/></a>
+                </div>
+                <br/><jsp:include page="../../INC/pie.jspx"/>
+            </div>
+            <jsp:scriptlet>session.invalidate();</jsp:scriptlet>
+        </body>
+    </html>
+
+</jsp:root>
+

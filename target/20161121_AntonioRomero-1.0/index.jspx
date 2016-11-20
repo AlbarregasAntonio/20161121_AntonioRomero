@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : index
+    Created on : 18-nov-2016, 12:39:09
+    Author     : Antonio
+-->
+<jsp:root   xmlns:jsp="http://java.sun.com/JSP/Page"
+            xmlns:c="http://java.sun.com/jsp/jstl/core"
+            version="2.1">
+    <jsp:directive.page contentType="text/html; charset=UTF-8" />
+    <jsp:directive.page isELIgnored="false" />
+    <jsp:output omit-xml-declaration="false"
+                doctype-root-element="html"
+                doctype-public="-//W3C//DTD XHTML 1.1//EN"
+                doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd" />
+    <html>
+        <head>
+            <title>Inicio</title>
+            <Link rel="stylesheet" href="CSS/estiloIndex.css"/>
+        </head>
+        <body>
+            <div id="principal">
+                <jsp:include page="INC/cabecera.jspx"/>
+                <div id="cuerpo">
+                    <h1>¡Su seguro ideal con solo un click!</h1>
+                    <form method="post" action="JSP/controlador/Idioma.jspx">
+                        <fieldset>
+                            <legend>Seleccione su idioma</legend>
+                            <input type="radio" name="idioma" value="es_ES" checked="checked"/>Espa&amp;ntildeol <br/>
+                            <input type="radio" name="idioma" value="en_GB"/> Ingl&amp;eacutes
+                        </fieldset>
+                        <br/><br/>
+                        <div id="botonImagen">
+                            <input type="image" src="IMG/click.png"/>
+                        </div>
+                    </form>
+                </div>
+                <br/><jsp:include page="INC/pie.jspx"/>
+            </div>
+        </body>
+    </html>
+
+</jsp:root>
+

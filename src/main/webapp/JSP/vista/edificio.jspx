@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : edificio
+    Created on : 18-nov-2016, 12:44:51
+    Author     : Antonio
+-->
+<jsp:root   xmlns:jsp="http://java.sun.com/JSP/Page"
+            xmlns:c="http://java.sun.com/jsp/jstl/core"
+            xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+            version="2.1">
+    <jsp:directive.page contentType="text/html; charset=UTF-8" />
+    <jsp:directive.page isELIgnored="false" />
+    <jsp:output omit-xml-declaration="false"
+                doctype-root-element="html"
+                doctype-public="-//W3C//DTD XHTML 1.1//EN"
+                doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd" />
+
+    <html>
+        <head>
+            <title>Edificio</title>
+            <Link rel="stylesheet" href="../../CSS/estiloIndex.css"/>
+        </head>
+        <body>
+            <fmt:setLocale value="${eleccion.idioma}"/>
+            <fmt:setBundle basename="${eleccion.idioma}" var="lang"/>
+            <div id="principal">
+                <jsp:include page="../../INC/cabecera.jspx"/>
+                <div id="cuerpo">
+                    <h1><fmt:message key="h1edificio" bundle="${lang}"/></h1>
+                    <h3><fmt:message key="h3edificio" bundle="${lang}"/></h3>
+                    <form method="post" action="../controlador/Edificio.jspx">
+                        <table>
+                            <tr>
+                                <td><label><fmt:message key="tipoedificio" bundle="${lang}"/></label></td>
+                                <td>
+                                    <select name="piso">
+                                        <option value="piso"><fmt:message key="piso" bundle="${lang}"/></option>
+                                        <option value="casa"><fmt:message key="casa" bundle="${lang}"/></option>
+                                        <option value="adosado"><fmt:message key="adosado" bundle="${lang}"/></option>
+                                        <option value="duplex"><fmt:message key="duplex" bundle="${lang}"/></option>
+                                        <option value="chalet"><fmt:message key="chalet" bundle="${lang}"/></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label><fmt:message key="habitaciones" bundle="${lang}"/></label></td>
+                                <td>
+                                    <select name="habitaciones">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5"><fmt:message key="habitacion5" bundle="${lang}"/></option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label><fmt:message key="fecha" bundle="${lang}"/></label></td>
+                                <td>
+                                    <select name="fecha">
+                                        <option value="1949"><fmt:message key="antes" bundle="${lang}"/> 1950</option>
+                                        <option value="1950"><fmt:message key="entre" bundle="${lang}"/> 1950 y 1990</option>
+                                        <option value="1991"><fmt:message key="entre" bundle="${lang}"/> 1991 y 2005</option>
+                                        <option value="2006"><fmt:message key="entre" bundle="${lang}"/> 2006 y 2015</option>
+                                        <option value="2016"><fmt:message key="despues" bundle="${lang}"/> 2015</option>
+                                    </select> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label><fmt:message key="construccion" bundle="${lang}"/></label></td>
+                                <td>
+                                    <input type="radio" name="tipo" value="madera"/><fmt:message key="madera" bundle="${lang}"/><br/>
+                                    <input type="radio" name="tipo" value="hormigon"/><fmt:message key="hormigon" bundle="${lang}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label><fmt:message key="valor" bundle="${lang}"/></label></td>
+                                <td>
+                                    <select name="valor">
+                                        <option value="25000"><fmt:message key="menos" bundle="${lang}"/> 50.000</option>
+                                        <option value="50001"><fmt:message key="entre" bundle="${lang}"/> 50.000 y 80.000</option>
+                                        <option value="80001"><fmt:message key="entre" bundle="${lang}"/> 80.0001 y 100.000</option>
+                                        <option value="100001"><fmt:message key="entre" bundle="${lang}"/> 100.001 y 150.000</option>
+                                        <option value="125000"><fmt:message key="mas" bundle="${lang}"/> 150.000</option>
+                                    </select> 
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div id="botones">
+                            <br/><input type="submit" name="enviar" value="${enviar}"/>
+                        </div>
+                    </form>
+                </div>
+                <br/><jsp:include page="../../INC/pie.jspx"/>
+            </div>
+        </body>
+    </html>
+
+</jsp:root>
+

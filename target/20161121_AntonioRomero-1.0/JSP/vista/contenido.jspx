@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : contenido
+    Created on : 18-nov-2016, 12:45:08
+    Author     : Antonio
+-->
+<jsp:root   xmlns:jsp="http://java.sun.com/JSP/Page"
+            xmlns:c="http://java.sun.com/jsp/jstl/core"
+            xmlns:fmt="http://java.sun.com/jsp/jstl/fmt"
+            version="2.1">
+    <jsp:directive.page contentType="text/html; charset=UTF-8" />
+    <jsp:directive.page isELIgnored="false" />
+    <jsp:output omit-xml-declaration="false"
+                doctype-root-element="html"
+                doctype-public="-//W3C//DTD XHTML 1.1//EN"
+                doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd" />
+    
+    <html>
+        <head>
+            <title>Contenido</title>
+            <Link rel="stylesheet" href="../../CSS/estiloIndex.css"/>
+        </head>
+        <body>
+            <fmt:setLocale value="${eleccion.idioma}"/>
+            <fmt:setBundle basename="${eleccion.idioma}" var="lang"/>
+            <div id="principal">
+                <jsp:include page="../../INC/cabecera.jspx"/>
+                <div id="cuerpo">
+                    <h1><fmt:message key="h1contenido" bundle="${lang}"/></h1>
+                    <h3><fmt:message key="h3contenido" bundle="${lang}"/></h3>
+                    <form mehtod="post" action="../controlador/Contenido.jspx">
+                        <table>
+                            <tr>
+                                <td><label><fmt:message key="daños" bundle="${lang}"/></label></td>
+                                <td>
+                                    <input type="checkbox" name="daños"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label><fmt:message key="cantidad" bundle="${lang}"/></label></td>
+                                <td>
+                                    <select name="valor">
+                                        <option value="10000">10.000</option>
+                                        <option value="20000">20.000</option>
+                                        <option value="30000">30.000</option>
+                                        <option value="50000">50.000</option>
+                                        <option value="100000">100.000</option>
+                                    </select> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label><fmt:message key="franquicia" bundle="${lang}"/></label></td>
+                                <td>
+                                    <input type="radio" name="franquicia" value="0"/><fmt:message key="ninguna" bundle="${lang}"/><br/>
+                                    <input type="radio" name="franquicia" value="500"/>500<br/>
+                                    <input type="radio" name="franquicia" value="1000"/>1.000
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div id="botones">
+                            <br/><input type="submit" name="enviar" value="${enviar}"/>
+                        </div>
+                    </form>
+                </div>
+                <br/><jsp:include page="../../INC/pie.jspx"/>
+            </div>
+        </body>
+    </html>
+</jsp:root>
+

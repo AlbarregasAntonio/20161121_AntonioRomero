@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18-nov-2016, 14:24:36
+    Author     : Antonio
+*/
+
+body{
+    background-color: #239043;
+}
+
+#principal{
+    float:left;
+    background-color: white;
+    width: 1000px;
+    height: 680px;
+    margin-left: 12%;
+}
+
+#cabecera{
+    float: left;
+    margin-left: 10%;
+}
+#idioma{
+    float:right;
+    margin-right:10%;
+}
+
+#cuerpo{
+    resize: none;
+    float:left;
+    width: 80%;
+    padding-left: 13%;
+}
+#cuerpo fieldset{
+    width:35%;
+}
+#botonImagen{
+    float:left;
+    width:20%;
+    margin-left:27%;
+}
+
+#pie{
+    margin-top:2%;
+    float:left;
+    width: 60%;
+    margin-left: 20%;
+}
+#pie p{
+    text-align: center;
+    background-color: #239043;
+}
