@@ -36,7 +36,7 @@
                         <p><fmt:message key="cuotacontenido" bundle="${lang}"/>&amp;nbsp<fmt:formatNumber value="${contenido.prima}" type="currency"/></p>
                     </c:if>
                     <br/>
-                    <a href="../../index.jsp"><fmt:message key="volver" bundle="${lang}"/></a>
+                    <a href="../../index.jspx"><fmt:message key="volver" bundle="${lang}"/></a>
                 </div>
                 <br/><jsp:include page="../../INC/pie.jspx"/>
             </div>
