@@ -14,6 +14,7 @@ public class EdificioBean {
     private int habitaciones;
     private int fecha;
     private String tipo;
+    // VALOR SERIA DOUBLE
     private int valor;
     private double prima;
 
@@ -65,5 +66,5 @@ public class EdificioBean {
         this.valor = valor;
     }
 
-    
+
 }

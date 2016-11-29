@@ -11,6 +11,7 @@ package es.albarregas.beans;
  */
 public class ContenidoBean {
     private boolean daños;
+    // ESTA CANTIDAD ES DOUBLE
     private int valor;
     private int franquicia;
     private double prima;
@@ -46,5 +47,5 @@ public class ContenidoBean {
     public void setFranquicia(int franquicia) {
         this.franquicia = franquicia;
     }
-    
+
 }

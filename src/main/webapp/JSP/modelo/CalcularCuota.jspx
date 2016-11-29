@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<!--
     Document   : CalcularCuota
     Created on : 18-nov-2016, 12:47:58
     Author     : Antonio
@@ -13,7 +13,7 @@
                 doctype-root-element="html"
                 doctype-public="-//W3C//DTD XHTML 1.1//EN"
                 doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml11.dtd" />
-    
+<!-- FALTA jsp:useBean, LO TUYO FUNCIONA PORQUE LO LLEVAS EN LA SESION -->    
     <c:if test="${eleccion.edificio}">
         <c:set var="cuota" value="${edificio.valor*0.005}"/>
 
@@ -58,18 +58,18 @@
         <c:if test="${edificio.tipo=='madera'}">
             <c:set var="prima" value="${prima+(prima*0.1)}"/>
         </c:if>
-        
+
         <jsp:setProperty name="edificio" property="prima" value="${prima}" />
     </c:if>
-    
-    
+
+
     <c:if test="${eleccion.contenido}">
         <c:set var="prima" value="${contenido.valor*0.008}"/>
 
         <c:if test="${contenido.daños}">
             <c:set var="prima" value="${prima*1.25}"/>
         </c:if>
-        
+
         <c:choose>
             <c:when test="${contenido.franquicia==500}">
                 <c:set var="prima" value="${prima-(prima*0.1)}"/>
@@ -78,7 +78,7 @@
                 <c:set var="prima" value="${prima-(prima*0.2)}"/>
             </c:when>
         </c:choose>
-        
+
         <jsp:setProperty name="contenido" property="prima" value="${prima}" />
     </c:if>
     <c:redirect url="../vista/verCuota.jspx"/>
